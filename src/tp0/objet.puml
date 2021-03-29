@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "**Personne**" as Personne{
+    Prénom [1..3] string(15)
+    DateNaissance : date
+    Nom: string(20)
+    +Age():integer
+}
+
+object "**Conducteur**" as Conducteur{
+    TypePermis : Enumeration
+    DatePermis : date
+}
+
+object "**Voiture**" as Voiture{
+    NbPortes : integer
+    Puissance : integer
+    Kilométrage : integer
+    Marque : string
+    Type : string
+    +Rouler(In km:integer):integer
+}
+
+Personne <|-- Conducteur
+
+Personne -- Voiture : "Possède"
+Voiture -- Conducteur : "Conduit"
+@enduml

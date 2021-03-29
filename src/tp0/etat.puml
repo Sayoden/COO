@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+hide empty description
+left to right direction
+
+state choix1 <<choice>>
+
+[*] -> Repérage
+Repérage -> Bilan
+Bilan -> choix1
+choix1 --> Physique : [score_physique < 50]
+choix1 --> Chimie : [score_chimie < 50]
+choix1 --> Maths : [score_maths < 50]
+Physique --> Bilan
+Chimie --> Bilan
+Maths --> Bilan
+choix1 --> Fin : [défaut]
+Fin -> [*]
+
+@enduml

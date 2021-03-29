@@ -20,7 +20,7 @@ rectangle Systeme{
 }
 
 R1 -- Cas1
-(Cas1) .> (Cas3) : includes
-(Cas1) <. (Cas2) : extends
+(Cas1) .> (Cas3) : <<includes>>
+(Cas1) <. (Cas2) : <<extends>>
 
 @enduml
