@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+Appelant -> "Ligne Téléphonique": Décroche
+"Ligne Téléphonique" -> Appelant: Tonalité
+Appelant -> "Ligne Téléphonique": Numérotation
+"Ligne Téléphonique" -> Appelant: Indication de sonnerie
+
+"Ligne Téléphonique" -> Appelé: Sonnerie
+Appelé -> "Ligne Téléphonique": Décroche
+
+Appelé -> Appelant: Allô
+
+@enduml

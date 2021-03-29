@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+actor Rôle1 as R1
+actor Rôle2 as R2
+
+R1 <|-- R2
+rectangle Systeme{
+    left to right direction
+    usecase "Cas1" as Cas1
+    usecase "Cas2" as Cas2
+    usecase "Cas3" as Cas3
+
+    usecase "Cas4" as Cas4
+    usecase "Cas5" as Cas5
+
+    Cas3 <|-- Cas4
+    Cas3 <|-- Cas5
+}
+
+R1 -- Cas1
+(Cas1) .> (Cas3) : includes
+(Cas1) <. (Cas2) : extends
+
+@enduml
