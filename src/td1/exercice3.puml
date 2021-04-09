@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+skinparam actorStyle hallow
+left to right direction
+
+:Porteur CB: as A1
+:Client banque: as A2
+:Opérateur de maintenance: as A3
+:Banque: as A4
+
+A2 --|> A1
+rectangle DAB{
+   (S'autentifier) as C1
+   (Carte Visa) as C2
+   (Carte de la banque) as C3
+   (Retirer de l'argent) as C4
+   (Consulter son compte) as C5
+   (Créditer son compte) as C6
+
+    A1 -- C1
+    C1 <|-- C2
+    C1 <|-- C3
+
+
+
+}
+
+@enduml

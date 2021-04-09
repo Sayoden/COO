@@ -1,0 +1,45 @@
+---
+title: TD1
+---
+
+# Diagramme de cas d'utilisation
+
+```plantuml
+
+@startuml
+
+skinparam actorStyle hollow
+left to right direction
+
+:Client: as a1
+:Vendeur: as a2
+:Caisse: as a3
+
+rectangle Magasin{
+    (Déambuler dans le magasin) as c1
+    (Demander conseil) as c2
+    (Essayer vêtement) as c3
+    (Acheter vêtement) as c4
+    (Vérifier stock) as c5
+    (Payer vêtement) as c6
+    (Payer avec CB) as c7
+    (Payer avec chèque) as c8
+    (Payer avec liquide) as c9
+    (Bénéficier d'une réduction) as c10
+
+    a1 -- c1
+    c2 ..> c1 : <<extends>>
+    a2 -- c2 : <<secondary>>
+    c3 ..> c1 : <<extends>>
+    c4 ..> c1 : <<extends>>
+    c4  ..> c5 : <<include>>
+    a2 -- c5: <<secondary>>
+    c4 ..> c6 : <<include>>
+    c6 -- a3 : <<secondary>>
+    c6 <|-- c7
+    c6 <|-- c8
+    c6 <|-- c9
+    c10 ..> c6 : <<extends>>
+}
+
+@enduml

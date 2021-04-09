@@ -1,0 +1,34 @@
+---
+title: TD1
+---
+
+# Diagramme de cas d'utilisation
+
+```plantuml
+
+@startuml
+
+skinparam actorStyle hollow
+left to right direction
+
+:Enseignant_responsable: as a1 
+:Enseignant: as a2
+:Eleve: as a3
+
+rectangle Etablissement{
+    (Visualiser planning salles) as v1
+    (Réserver) as c1
+    (Réserver salle) as c2
+    (Réserver matérielle) as c3
+    (Modifier les réservation matérielle)as c4
+    c1<|--c2
+    c1<|--c3
+    a3--v1
+    a2--c1
+    a1--c4
+
+
+}
+a2<|-up-a1
+a3<|-up-a2
+@enduml
